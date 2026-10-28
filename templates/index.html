@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eye Blink Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header><h1>Real-Time Eye Blink Detection</h1></header>
+  <main class="layout">
+    <section class="card video-card">
+      <img id="video" src="/video_feed" alt="Live webcam feed">
+    </section>
+    <aside class="card panel">
+      <div class="label">Blink Count</div>
+      <div id="count" class="count">0</div>
+
+      <div class="label">Status</div>
+      <div id="status" class="status status-warn">Connecting...</div>
+      <div id="message" class="message"></div>
+
+      <div class="label">Eye Aspect Ratio</div>
+      <div id="ear" class="ear">--</div>
+
+      <button id="reset" type="button">Reset Counter</button>
+      <div id="notice" class="notice" role="alert"></div>
+    </aside>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
